@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Button @click="changeName">Change title</Button>
-    <HelloWorld :name="title" msg="Welcome to Your Vue.js App"/>
+    <HelloWorld  msg="Welcome to Your Vue.js App"/>
   </div>
 </template>
 
