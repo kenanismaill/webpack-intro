@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Button @click="changeName">Change title</Button>
+    <HelloWorld :name="title" msg="Welcome to Your Vue.js App"/>
   </div>
 </template>
 
@@ -10,6 +10,17 @@ import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'App',
+  data: function () {
+    return {
+      title: "kenan",
+    }
+  },
+  methods: {
+    changeName() {
+      this.title = " New title"
+    }
+  },
+
   components: {
     HelloWorld
   }
