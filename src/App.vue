@@ -1,18 +1,25 @@
 <template>
   <div id="app">
+    <p> age is : {{ age }}</p>
+    <p>data from child component is : {{ childData }}</p>
     <Button @click="changeName">Change title</Button>
-    <HelloWorld  msg="Welcome to Your Vue.js App"/>
+    <HelloWorld :age="age" :name="title" @data="childData=$event"/>
+    <ChildComponent2 @ageEdited="age= $event" :age="age"></ChildComponent2>
+
   </div>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
+import ChildComponent2 from "./components/ChildComponent2";
 
 export default {
   name: 'App',
   data: function () {
     return {
       title: "kenan",
+      childData: "",
+      age: 27
     }
   },
   methods: {
@@ -22,7 +29,8 @@ export default {
   },
 
   components: {
-    HelloWorld
+    HelloWorld,
+    ChildComponent2,
   }
 }
 </script>
